@@ -49,14 +49,48 @@ function fullScreenConfetti() {
     }, 300);
 }
 
+/* ---------- FLOATING HEARTS ---------- */
+const heartsContainer = document.getElementById("heartsContainer");
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = Math.random() * 3 + 4 + "s"; // 4-7s
+    heart.style.opacity = Math.random() * 0.5 + 0.1;
+    heartsContainer.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 8000);
+}
+
+setInterval(createHeart, 400);
+
 /* ---------- YES BUTTON GROWS ---------- */
-let yesScale = 1;
-function growYes() {
-    yesScale = Math.min(2.2, yesScale + 0.1);
+let yesScale = 0.8; // Start smaller
+yesBtn.style.transform = `translateY(-50%) scale(${yesScale})`;
+
+function growYes(amount = 0.1) {
+    yesScale = Math.min(3, yesScale + amount); // Cap at 3x
     yesBtn.style.transform = `translateY(-50%) scale(${yesScale})`;
 }
 
-/* ---------- NO BUTTON RUNS AWAY ---------- */
+// Automatically grow slowly distinct from the interaction
+setInterval(() => {
+    growYes(0.001);
+}, 100);
+
+/* ---------- NO BUTTON RUNS AWAY & GETS SASSY ---------- */
+const noTexts = [
+    "No", "Are you sure?", "Really?", "Think again!",
+    "Last chance!", "Surely not?", "You might regret this!",
+    "Give it another thought!", "Are you absolutely certain?",
+    "This could be a mistake!", "Have a heart!",
+    "Don't be so cold!", "Change of heart?", "Wouldn't you reconsider?",
+    "Is that your final answer?", "You're breaking my heart ;("
+];
+
 function clamp(n, min, max) {
     return Math.max(min, Math.min(max, n));
 }
@@ -81,7 +115,11 @@ function moveNo(px, py) {
     noBtn.style.top = newTop + "px";
     noBtn.style.transform = "none";
 
-    growYes();
+    // Change text randomly
+    const randomText = noTexts[Math.floor(Math.random() * noTexts.length)];
+    noBtn.innerText = randomText;
+
+    growYes(0.1);
 }
 
 zone.addEventListener("pointermove", e => {

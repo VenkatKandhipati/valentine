@@ -1,79 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="A special question for a special person.">
-  <title>Will you be my Valentine?</title>
 
-  <!-- Confetti library -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-  
-  <link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="A special question for a special person.">
+    <title>Will you be my Valentine?</title>
+
+    <!-- Confetti library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <canvas id="confettiCanvas"></canvas>
+    <div class="hearts-container" id="heartsContainer"></div>
+    <canvas id="confettiCanvas"></canvas>
 
-  <main class="card">
-    <!-- ANIMAL WITH HEART -->
-    <svg class="art" viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="fur" x1="0" x2="1">
-          <stop offset="0" stop-color="#f7c7a1"/>
-          <stop offset="1" stop-color="#f2a97b"/>
-        </linearGradient>
-        <linearGradient id="heart" x1="0" x2="1">
-          <stop offset="0" stop-color="#ff4d7d"/>
-          <stop offset="1" stop-color="#ff1f68"/>
-        </linearGradient>
-      </defs>
+    <main class="card">
+        <!-- ANIMAL WITH HEART -->
+        <svg class="art" viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="fur" x1="0" x2="1">
+                    <stop offset="0" stop-color="#e0f2fe" />
+                    <stop offset="1" stop-color="#bae6fd" />
+                </linearGradient>
+                <linearGradient id="heart" x1="0" x2="1">
+                    <stop offset="0" stop-color="#d946ef" />
+                    <stop offset="1" stop-color="#a855f7" />
+                </linearGradient>
+            </defs>
 
-      <path d="M250 50 C250 33 270 25 282 38
+            <path d="M250 50 C250 33 270 25 282 38
                C294 25 314 33 314 50
                C314 78 282 92 282 106
-               C282 92 250 78 250 50Z"
-            fill="url(#heart)"/>
+               C282 92 250 78 250 50Z" fill="url(#heart)" />
 
-      <path d="M90 120 C90 70 140 40 190 60
+            <path d="M90 120 C90 70 140 40 190 60
                C240 40 290 70 290 120
                C290 180 240 210 190 210
-               C140 210 90 180 90 120Z"
-            fill="url(#fur)"/>
+               C140 210 90 180 90 120Z" fill="url(#fur)" />
 
-      <path d="M110 92 L95 55 L140 78 Z" fill="#f2a97b"/>
-      <path d="M270 92 L285 55 L240 78 Z" fill="#f2a97b"/>
+            <path d="M110 92 L95 55 L140 78 Z" fill="#7dd3fc" />
+            <path d="M270 92 L285 55 L240 78 Z" fill="#7dd3fc" />
 
-      <circle cx="160" cy="130" r="8"/>
-      <circle cx="220" cy="130" r="8"/>
+            <circle cx="160" cy="130" r="8" fill="#1e293b" />
+            <circle cx="220" cy="130" r="8" fill="#1e293b" />
 
-      <path d="M190 144 C186 144 182 148 182 152
+            <path d="M190 144 C186 144 182 148 182 152
                C182 160 190 164 190 170
                C190 164 198 160 198 152
-               C198 148 194 144 190 144Z"
-            fill="#ff7aa2"/>
-    </svg>
+               C198 148 194 144 190 144Z" fill="#d946ef" />
+        </svg>
 
-    <h1>sahithi will you be my valentine?</h1>
+        <h1>sahithi will you be my valentine?</h1>
 
-    <section class="button-zone" id="zone">
-      <button id="yesBtn">Yes</button>
-      <button id="noBtn">No</button>
-    </section>
+        <section class="button-zone" id="zone">
+            <button id="yesBtn">Yes</button>
+            <button id="noBtn">No</button>
+        </section>
 
-    <!-- HINT -->
-    <div class="hint" id="hint">“No” seems a bit shy 😈</div>
+        <!-- HINT -->
+        <div class="hint" id="hint">“No” seems a bit shy 😈</div>
 
-    <section class="result" id="result">
-      <h2>YAY! 🎉</h2>
-      <img
-        class="fireworks"
-        src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExczBtdm9vajFiMWQ4YXBhb2txamh2ZW40aXdiZG45NGI1OTh3M293cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/t8xgPfC5oNIRMrNooe/giphy.gif"
-        alt="Fireworks"
-      />
-    </section>
-  </main>
+        <section class="result" id="result">
+            <h2>YAY! 🎉</h2>
+            <img class="fireworks"
+                src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExczBtdm9vajFiMWQ4YXBhb2txamh2ZW40aXdiZG45NGI1OTh3M293cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/t8xgPfC5oNIRMrNooe/giphy.gif"
+                alt="Fireworks" />
+        </section>
+    </main>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
