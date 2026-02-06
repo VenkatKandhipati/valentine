@@ -135,9 +135,112 @@ button {
   bottom: -20px;
   width: 20px;
   height: 20px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 105, 180, 0.5);
+  /* Hot pink translucent */
   transform: rotate(45deg);
   animation: floatUp linear forwards;
+}
+
+.extra-gif {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(250px, 60vw);
+  z-index: 10000;
+  pointer-events: none;
+  opacity: 0;
+  /* Hidden initially, shown by animation */
+  animation: wander 10s infinite ease-in-out alternate;
+  border-radius: 12px;
+}
+
+/* Distribute animations for multiple GIFs */
+.extra-gif:nth-of-type(2) {
+  animation-duration: 12s;
+  animation-delay: 0s;
+  width: min(200px, 50vw);
+}
+
+.extra-gif:nth-of-type(3) {
+  animation: wanderReverse 14s infinite ease-in-out alternate;
+  animation-delay: 1s;
+  width: min(220px, 55vw);
+}
+
+.extra-gif:nth-of-type(4) {
+  animation-duration: 9s;
+  animation-delay: 2s;
+  width: min(180px, 45vw);
+  animation-direction: alternate-reverse;
+}
+
+.scooby {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(250px, 60vw);
+  z-index: 10000;
+  pointer-events: none;
+  opacity: 0;
+  animation: wander 11s infinite ease-in-out alternate-reverse;
+  border-radius: 12px;
+  animation-delay: 1.5s;
+}
+
+@keyframes wander {
+  0% {
+    transform: translate(-50%, -50%) translate(-30vw, -20vh) rotate(-10deg);
+    opacity: 1;
+  }
+
+  25% {
+    transform: translate(-50%, -50%) translate(30vw, 10vh) rotate(5deg);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) translate(-20vw, 30vh) rotate(-5deg);
+    opacity: 1;
+  }
+
+  75% {
+    transform: translate(-50%, -50%) translate(20vw, -30vh) rotate(10deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) translate(-30vw, -20vh) rotate(-10deg);
+    opacity: 1;
+  }
+}
+
+@keyframes wanderReverse {
+  0% {
+    transform: translate(-50%, -50%) translate(30vw, 20vh) rotate(10deg);
+    opacity: 1;
+  }
+
+  25% {
+    transform: translate(-50%, -50%) translate(-30vw, -10vh) rotate(-5deg);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) translate(20vw, -30vh) rotate(5deg);
+    opacity: 1;
+  }
+
+  75% {
+    transform: translate(-50%, -50%) translate(-20vw, 30vh) rotate(-10deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) translate(30vw, 20vh) rotate(10deg);
+    opacity: 1;
+  }
 }
 
 .heart::before,
